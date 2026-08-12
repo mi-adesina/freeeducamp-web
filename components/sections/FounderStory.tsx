@@ -38,7 +38,7 @@ export default function FounderStory() {
               not because they lacked ability, but because they lacked access
               to quality learning resources outside the classroom. Too often,
               academic success is determined by what a family can afford rather
-              than a student@apos;s willingness to learn.
+              than a student's willingness to learn.
             </p>
 
             <p className="mt-5">
