@@ -1,151 +1,204 @@
-# FreeEduCamp — Landing Page (v0.2)
+# FreeEduCamp
 
-A free educational platform helping students build mastery through
-consistency, practice, and community. This repo is the **landing
-page**: brand introduction + waitlist signup only. No auth, profiles,
-streaks, points, ranks, leaderboards, question engines, or backend APIs
-are implemented yet — see "Scope" below.
+### Learn. Practice. Master.
 
-**v0.2** refines the messaging to feel more credible and
-mission-driven (less "competition app," more "free education for
-every student"), and adds a Subjects section, a founder story, and a
-"Built For" trust strip. See "What changed in v0.2" below.
+Free educational resources, practice questions, and guided learning paths designed to help students master academic subjects.
 
-## Tech stack
+🌐 Website: https://freeeducamp.org
 
-- [Next.js 14](https://nextjs.org/) (App Router)
+---
+
+## About
+
+FreeEduCamp is an educational platform focused on making quality learning resources accessible to every student, regardless of financial background.
+
+The platform is being built to help students develop genuine mastery through consistent learning, deliberate practice, and long-term academic growth.
+
+Rather than relying on expensive tutoring or premium subscriptions, students will have access to free educational resources that support learning both inside and outside the classroom.
+
+---
+
+## Mission
+
+To make high-quality educational resources freely accessible to every student, regardless of background or financial circumstance.
+
+FreeEduCamp exists to help students:
+
+- Learn with clarity
+- Practice consistently
+- Build lasting mastery
+- Develop strong study habits
+- Reach their academic potential
+
+---
+
+## Subjects at Launch
+
+FreeEduCamp will launch with core secondary-school subjects:
+
+- Mathematics
+- Further Mathematics
+- Physics
+- Chemistry
+- Biology
+- English Language
+
+Additional subjects and learning tools will be introduced over time.
+
+---
+
+## Current Features
+
+The current version includes:
+
+- Responsive landing page
+- Waitlist registration
+- Founder story and mission
+- SEO optimization
+- Custom domain deployment
+- Google Search Console integration
+- Sitemap and robots.txt support
+- Mobile-friendly design
+
+---
+
+## Coming Soon
+
+The following features are planned for future releases:
+
+- Mathematics Learning Paths
+- Question of the Day
+- Daily Streaks
+- Weekly Challenges
+- Points & Academic Ranks
+- Leaderboards
+- Ask a Teacher
+- Additional Subjects
+- Student Learning Dashboard
+
+---
+
+## Technology Stack
+
+Built with:
+
+- Next.js 14
 - TypeScript
 - Tailwind CSS
-- [lucide-react](https://lucide.dev/) for icons
-- No backend, no database, no auth
+- Supabase
+- Vercel
+- Lucide React
 
-## Folder structure
+---
 
-```
-freeeducamp/
-├── app/
-│   ├── layout.tsx        # Root layout: fonts, <html>/<body>, SEO metadata
-│   ├── page.tsx           # Home page: composes all sections in order
-│   └── globals.css        # Tailwind layers + base accessibility defaults
-├── components/
-│   ├── layout/
-│   │   ├── Navbar.tsx        # Sticky nav, responsive (desktop + mobile menu)
-│   │   └── Footer.tsx        # Brand, tagline, contact, quick links, copyright
-│   ├── sections/
-│   │   ├── Hero.tsx          # Headline, tagline, CTAs, "learning loop" visual
-│   │   ├── Mission.tsx       # Our Mission + 4 supporting pillars
-│   │   ├── Subjects.tsx      # NEW — "Subjects at Launch" card grid
-│   │   ├── Features.tsx      # "Coming Soon" feature card grid
-│   │   ├── Vision.tsx        # "Why FreeEduCamp?" + highlighted vision statement
-│   │   ├── FounderStory.tsx  # NEW — "Why I Started FreeEduCamp" testimonial
-│   │   ├── TrustSignals.tsx  # NEW — "Built For" students/parents/teachers strip
-│   │   └── Waitlist.tsx      # Waitlist form (client component, local state)
-│   └── ui/
-│       ├── Button.tsx        # Shared button/link CTA, 3 variants
-│       ├── Container.tsx     # Max-width + padding wrapper for sections
-│       ├── SectionHeading.tsx# Kicker + title + description pattern
-│       └── FeatureCard.tsx   # Icon + title + description card (reused by
-│                              # both Subjects and Features)
-├── lib/
-│   └── types.ts             # WaitlistEntry / WaitlistFormErrors types
-├── public/                 # Static assets (empty for now)
-├── tailwind.config.ts       # Brand color/type/shadow design tokens
-└── package.json
-```
+## Founder
 
-**Why this structure:** `components/layout` holds chrome that appears on
-every page (nav, footer). `components/sections` holds the one-off blocks
-that make up the home page — each section is self-contained and only
-used once. `components/ui` holds small, reusable primitives with no
-knowledge of page content, so they could be reused if a second page is
-added later. `lib` is for shared types/utilities that aren't
-React components.
+### Michael Adesina
 
-## What changed in this pass
+- Founder, FreeEduCamp
+- B.Sc. Pure Mathematics, University of Lagos
+- Mathematics Teacher
+- Software Engineer
 
-- **Hero** — description copy updated to lead with "free educational
-  resources" rather than "learning platform."
-- **Subjects** *(new)* — six subject cards (Mathematics, Further
-  Mathematics, Physics, Chemistry, Biology, English Language), placed
-  between Mission and Features. Reuses `FeatureCard`.
-- **Features** — "Weekly Challenges" now uses a `Target` icon instead of
-  `Swords`, and the Leaderboards description was rewritten to emphasize
-  friendly progress tracking instead of competition.
-- **Vision** — added a visually prominent, dark-card callout with the
-  long-term "students across Africa" vision statement.
-- **FounderStory** *(new)* — a personal, testimonial-style section
-  ("Why I Started FreeEduCamp") with a pull-quote and themed tags for
-  accessibility, affordability, long-term growth, and Africa-wide reach.
-- **TrustSignals** *(new)* — a short "Built For" strip (Students,
-  Parents, Teachers) directly above the Waitlist section.
-- **Waitlist** — the "N signups recorded this session" counter has been
-  removed entirely (no replacement stats). Submissions still validate
-  client-side and log to the console with the same `TODO(api)` marker;
-  they're kept in local state internally, just no longer displayed.
-- **Navbar / Footer** — both now include a **Subjects** link, and the
-  footer adds a "Quick Links" label, a short mission line, and a Home
-  link.
-- **SEO** — page title/description updated (`FreeEduCamp | Learn.
-  Practice. Master.`), Open Graph and Twitter metadata kept in sync.
+As a mathematics teacher, Michael has worked with hundreds of students and has seen firsthand how access to quality learning resources can influence academic success.
 
-## Scope
+FreeEduCamp was created to help bridge that gap and make educational opportunities more accessible to learners everywhere.
 
-**Included:** brand landing page, responsive nav, hero, mission,
-subjects, "coming soon" features grid, vision, founder story, trust
-signals, and a client-side waitlist form with validation.
+---
 
-**Not included (intentionally):** authentication, user profiles,
-streaks, points/ranks, leaderboards, a question engine, or any backend
-API. The waitlist form validates input and logs submissions to the
-browser console with a `TODO(api)` comment marking exactly where a real
-`POST /api/waitlist` call should be added later (see
-`components/sections/Waitlist.tsx`).
+## Running Locally
 
-## Running locally
+### Prerequisites
 
-Requires Node.js 18.17+ (Next.js 14 minimum) and npm.
+- Node.js 18.17+
+- npm
+
+### Installation
 
 ```bash
-# 1. Install dependencies
+git clone https://github.com/mi-adesina/freeeducamp-web.git
+
+cd freeeducamp-web
+
 npm install
+```
 
-# 2. Start the dev server
+### Development Server
+
+```bash
 npm run dev
-
-# 3. Open the app
-# http://localhost:3000
 ```
 
-Other useful commands:
+Open:
+
+```text
+http://localhost:3000
+```
+
+### Production Build
 
 ```bash
-npm run build   # Production build
-npm run start   # Run the production build locally
-npm run lint    # Run ESLint
+npm run build
+npm run start
 ```
 
-## Deploying to Vercel
-
-The project is a stock Next.js App Router app, so it deploys to Vercel
-with no extra configuration.
-
-**Option A — Vercel dashboard**
-1. Push this repo to GitHub/GitLab/Bitbucket.
-2. Go to [vercel.com/new](https://vercel.com/new) and import the repo.
-3. Framework preset "Next.js" is auto-detected — leave build/output
-   settings as default.
-4. Click **Deploy**.
-5. Once live, add `freeeducamp.org` under **Project → Settings →
-   Domains** and point your DNS (A/CNAME records, as instructed by
-   Vercel) at it.
-
-**Option B — Vercel CLI**
+### Linting
 
 ```bash
-npm install -g vercel
-vercel        # deploys a preview
-vercel --prod # deploys to production
+npm run lint
 ```
 
-No environment variables are required, since there is no backend or
-third-party API integration yet.
+---
+
+## Deployment
+
+The project is deployed on Vercel.
+
+Production Website:
+
+https://freeeducamp.org
+
+Any push to the main branch automatically triggers a new deployment.
+
+---
+
+## Project Status
+
+FreeEduCamp is currently in its early-access stage.
+
+The focus is on:
+
+- Building educational content
+- Growing the waitlist
+- Gathering feedback from students, parents, and teachers
+- Expanding learning resources
+
+---
+
+## Contributing
+
+At the moment, development is managed by the FreeEduCamp team.
+
+Future opportunities for educators, contributors, and volunteers may be announced as the platform grows.
+
+---
+
+## Contact
+
+Website:
+
+https://freeeducamp.org
+
+Email:
+
+hello@freeeducamp.org
+
+---
+
+## Vision
+
+Our long-term goal is to become the free educational platform students across Africa can rely on every day to learn, practice, and master academic subjects.
+
+---
+
+© 2026 FreeEduCamp. All rights reserved.
