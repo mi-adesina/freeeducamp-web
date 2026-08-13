@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter, IBM_Plex_Mono } from "next/font/google";
-import "./globals.css";
+// import "./globals.css";
 
 // Display face: Fraunces -- a warm, slightly editorial serif that keeps the
 // brand feeling like a real learning institution rather than a generic SaaS
@@ -71,6 +71,10 @@ export const metadata: Metadata = {
 
   creator: "Michael Adesina",
   publisher: "FreeEduCamp",
+
+  alternates: {
+  canonical: "https://www.freeeducamp.org",
+},
 
 
   openGraph: {
